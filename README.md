@@ -93,3 +93,15 @@ docker run -p 8001:8001 abalone-age-prediction
 ```
 
 To get access to the FastAPI dashboard use this url: http://0.0.0.0:8001/docs
+
+### FastAPI Demonstration
+
+The Following command runs the FastAPI testing app
+
+```bash
+uvicorn main:app --reload
+```
+
+Using the localhost url, we can see the following demos
+
+
