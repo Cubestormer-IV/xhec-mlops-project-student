@@ -12,9 +12,9 @@ from mlflow import MlflowClient
 
 @flow(name="training-pipeline", retries=3, retry_delay_seconds=5, log_prints=True)
 def main(trainset_path) -> None:
-    
+
     """
-    Train a Lasso regression model using the dataset provided at the specified path, log relevant parameters and metrics using MLflow, 
+    Train a Lasso regression model using the dataset provided at the specified path, log relevant parameters and metrics using MLflow,
     and save the trained model and preprocessor as pickle files.
 
     This function performs the following steps:
