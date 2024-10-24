@@ -15,13 +15,15 @@ def main(trainset_path) -> None:
     # Preprocess data
     X,y, preprocessor = preprocess_data(df)
     
-    # (Optional) Pickle encoder if need be
+    # Pickle encoder if need be
+    pickle_object(preprocessor, "preprocessor")
 
     # Train model
-    pipeline, X_train, X_test, y_train, y_test = train_model(X,y, preprocessor)
+    model, X_train, X_test, y_train, y_test = train_model(X,y, preprocessor)
 
     # Pickle model --> The model should be saved in pkl format the `src/web_service/local_objects` folder
-    pickle_object(pipeline)
+    pickle_object(model, "model")
+
     
 
 if __name__ == "__main__":
