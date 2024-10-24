@@ -1,2 +1,25 @@
-# TODO - complete with requirements (pandas, sklearn etc...)
-# Then, execute "pip-compile requirements.in" to generate the file requirements.txt
+# Data handling and processing
+pandas
+numpy
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+
+# MLOps and Experiment Tracking
+mlflow
+prefect
+orion
+
+# Command-line argument parsing
+argparse
+
+# Utility libraries (not provided in standard Python)
+loguru  # For logging
+
+# Filesystem and system interaction
+os 
+
+# Add-on for caching
+functools32  # For lru_cache
