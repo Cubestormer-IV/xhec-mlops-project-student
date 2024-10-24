@@ -5,17 +5,36 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "xhec-mlops-project-student"
 authors = [
-  { name = "username", email = "user@email.com" },
-] # TODO: add authors here
+  { name = "qly0923", email = "qiling.zhu@polytechnique.edu" },
+  { name = "ebarattini", email = "elisebarattini@gmail.com" },
+  { name = "khushiverma12", email = "khushiverma12@live.com" },
+  { name = "Cubestormer-IV", email = "tanmay@gmail.com" },
+  { name = "eva-toledano", email = "toledanoeva@hotmail.fr" }
+]
 description = "This repository contains the solution for the X-HEC MLOps Project on the industrialization of Abalone age prediction model."
 version = "0.0.1"
 readme = "README.md"
-requires-python = ">3.10" # TODO: update this version
+requires-python = ">3.10"
 
 [project.urls]
-"Homepage" = "https://github.com/artefactory/xhec-mlops-project-student" # TODO: update this URL
+"Homepage" = "https://github.com/Cubestormer-IV/xhec-mlops-project-student/tree/3/use_prefect"
 
 [tool.setuptools]
 packages = ["src"]
 
-# TODO: add black, isort, and ruff (optional - not needed if using flake8) configurations here
+[tool.black]
+line-length = 79
+target-version = ['py310']
+skip-string-normalization = true
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
