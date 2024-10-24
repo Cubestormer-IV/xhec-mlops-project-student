@@ -86,7 +86,7 @@ To monitor the Prefect dashboard: http://127.0.0.1:4200
 
 Build the docker image from the Dockerfile:
 ```bash
-docker build -t abalone-age-prediction -f Dockerfile .
+docker build -t abalone-age-prediction -f Dockerfile.app .
 ```
 
 Run the docker container from the created image:
