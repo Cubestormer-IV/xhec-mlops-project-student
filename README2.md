@@ -55,9 +55,14 @@ pip install -r requirements-dev.txt # Install development tools such as flake8, 
 
 ## 2. Running the code
 ### Running the Prefect Worklow
-Configure the Prefect API URL:
+To start the Prefect server and enable monitoring:
 ```bash
-prefect config set PREFECT_API_URL=TODO
+prefect server start
+```
+
+Set the Prefect API URL to communicate with the server:
+```bash
+prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api
 ```
 
 Verify SQLite Installation (used as the Prefect backend database):
@@ -65,18 +70,17 @@ Verify SQLite Installation (used as the Prefect backend database):
 sqlite3 --version
 ```
 
-Start the Prefect Server:
+Run a Prefect worker to poll the tasks from the specified work pool:
 ```bash
-prefect server start --host 0.0.0.0
+prefect worker start --pool "default-agent-pool"
 ```
 
-Run the Model Training Workflow:
+To manually start a flow run for an existing deployment:
 ```bash
-python src/modelling/main.py
+prefect deployment run "training-pipeline/My Flow" --param 'data/abalone.csv'
 ```
 
-Access the Prefect UI:
-TODO-paste url
+To monitor the Prefect dashboard: http://127.0.0.1:4200
 
 
 ### Deploying the API
