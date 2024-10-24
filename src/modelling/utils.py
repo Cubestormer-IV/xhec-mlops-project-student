@@ -24,7 +24,7 @@ def pickle_object(obj: object, filename: str, folder_path: str = '../web_service
         logger.error(f"Failed to pickle object: {e}")
 
 @task(name="load-preprocessor", tags=["fails"], retries=3, retry_delay_seconds=60)
-@lru_cache
+#@lru_cache
 def load_preprocessor(filepath: os.PathLike) -> object:
     """
     Loads a pickled preprocessor from the specified file path.
@@ -44,7 +44,7 @@ def load_preprocessor(filepath: os.PathLike) -> object:
         raise
 
 @task(name="load-pickle-model", tags=["fails"], retries=3, retry_delay_seconds=60)
-@lru_cache
+#@lru_cache
 def load_model(filepath: os.PathLike) -> object:
     """
     Loads a pickled model from the specified file path.

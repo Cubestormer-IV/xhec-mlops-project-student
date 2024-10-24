@@ -5,6 +5,9 @@ from training import *
 from utils import *
 from preprocessing import *
 from predicting import *
+from sklearn.metrics import root_mean_squared_error
+import numpy as np
+
 
 import mlflow
 from prefect import flow
@@ -36,12 +39,15 @@ def main(trainset_path) -> None:
         X,y, preprocessor = preprocess_data(df)
 
         # Log parameters manually
-        mlflow.log_param("alpha", alpha)
+        alpha = 0.01
+        test_size = 0.2
+        random_state = 50
+        mlflow.log_param("alpha",alpha)
         mlflow.log_param("test_size", test_size)
         mlflow.log_param("random_state", random_state)
 
         # Train model
-        model, X_train, X_test, y_train, y_test = train_model(X,y, preprocessor)
+        model, X_train, X_test, y_train, y_test = train_model(X,y, preprocessor, alpha, test_size, random_state)
 
         # Predict on the test set
 
@@ -54,7 +60,7 @@ def main(trainset_path) -> None:
         mlflow.log_metric("rmse", rmse)
 
         # Log the model
-        mlflow.sklearn.log_model(pipeline, "models")
+        mlflow.sklearn.log_model(model, "models")
 
         # Register the model
         mlflow.register_model(f"runs:/{run_id}/models", "lasso_model")

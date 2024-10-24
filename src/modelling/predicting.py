@@ -2,7 +2,7 @@ import pandas as pd
 import mlflow
 import mlflow.sklearn
 from sklearn.pipeline import Pipeline
-from src.modelling.preprocessing import preprocess_data
+from preprocessing import preprocess_data
 from utils import load_model
 from prefect import task
 
