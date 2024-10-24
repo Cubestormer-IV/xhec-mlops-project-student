@@ -20,8 +20,8 @@ The age of abalone is determined by cutting the shell through the cone, staining
 
 **Dataset**: The dataset is available to download at [Kaggle page](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset).
 
-### Authors
-Eva Toledano, Qiling Zhu, Khushi Verma, Elise Barattini, Tanmay Kale (TODO: add usernames)
+**Authors**: [Eva Toledano](https://github.com/eva-toledano), [Qiling Zhu](https://github.com/qly0923), [Khushi Verma](https://github.com/khushiverma12
+), [Elise Barattini](https://github.com/ebarattini), [Tanmay Kale](https://github.com/Cubestormer-IV)
 
 ## Recreating the python environment
 
