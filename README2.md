@@ -94,4 +94,4 @@ Run the docker container from the created image:
 docker run -p 8000:8000 abalone-age-prediction
 ```
 
-To get access to the FastAPI dashboard use this url: http://0.0.0.0:8000/
+To get access to the FastAPI dashboard use this url: http://0.0.0.0:8000
