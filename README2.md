@@ -1,8 +1,8 @@
 <div align="center">
 
-# Prediction of Abalone Age
+# Abalone Project
 
-[![Python Version](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue.svg)]()
+[![Python Version](https://img.shields.io/badge/python-3.10-blue.svg)]()
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 [![Linting: flake8](https://img.shields.io/badge/linting-flake8-yellowgreen.svg)](https://flake8.pycqa.org/)
@@ -12,29 +12,72 @@
 ## Context of the project
 
 ### Description
-This repository has for purpose to industrialize the [Abalone age prediction](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset) Kaggle contest.
 
-The age of abalone is determined by cutting the shell through the cone, staining it, and counting the number of rings through a microscope -- a boring and time-consuming task. Other measurements, which are easier to obtain, are used to predict the age.
+**Objective**: predict the age of abalone (Rings + 1.5) from various physical measurements and industrialise the machine learning workflow.
 
-**Objective**: predict the age of abalone (Rings + 1.5) from various physical measurements.
-
-**Dataset**: The dataset is available to download at [Kaggle page](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset).
+**Dataset**: The dataset can be downloaded at [Kaggle page](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset).
 
 **Authors**: [Eva Toledano](https://github.com/eva-toledano), [Qiling Zhu](https://github.com/qly0923), [Khushi Verma](https://github.com/khushiverma12
 ), [Elise Barattini](https://github.com/ebarattini), [Tanmay Kale](https://github.com/Cubestormer-IV)
 
-## Recreating the python environment
+## 1. Setup
+### Setup the Virtual Environment
 
-Use a virtual environment to install the dependencies of the project:
+**Option 1: Conda**
+
+Create and activate the environment:
 ```bash
 conda env create --file environment.yml
 conda activate <envname>
 ```
+TODO - replace envname
 
-## Running the code
-### Running the API
+**Option 2: Pip and Virtualenv**
 
-To get access to the FastAPI dashboard use this url: TODO
+Create and activate the environment:
+```bash
+python3 -m venv venv
+# macOS/Linux
+source venv/bin/activate
+# Windows
+.\venv\Scripts\activate
+```
 
-### Building the Docker Image
+### Install the Dependencies
 
+Install the requirements:
+```bash
+pip install -r requirements.txt # Install the main dependencies for the project
+pip install -r requirements-dev.txt # Install development tools such as flake8, black
+
+```
+
+
+## 2. Running the code
+### Running the Prefect Worklow
+Configure the Prefect API URL:
+```bash
+prefect config set PREFECT_API_URL=TODO
+```
+
+Verify SQLite Installation (used as the Prefect backend database):
+```bash
+sqlite3 --version
+```
+
+Start the Prefect Server:
+```bash
+prefect server start --host 0.0.0.0
+```
+
+Run the Model Training Workflow:
+```bash
+python src/modelling/main.py
+```
+
+Access the Prefect UI:
+TODO-paste url
+
+
+### Deploying the API
+TODO

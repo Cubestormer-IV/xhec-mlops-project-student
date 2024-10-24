@@ -10,7 +10,7 @@ from preprocessing import preprocess_data
 from prefect import task
 
 @task(name="train-model", tags=["fails"], retries=3, retry_delay_seconds=60)
-def train_model(X,y, preprocessor):
+def train_model(X,y, preprocessor, alpha, test_size, random_state):
 
     """
     Trains a Lasso regression model using a given preprocessor and splits the data into training and test sets.
@@ -32,10 +32,6 @@ def train_model(X,y, preprocessor):
         y_train (pd.Series): The training data (target variable).
         y_test (pd.Series): The test data (target variable).
     """
-
-    alpha = 0.01
-    test_size = 0.2
-    random_state = 50
 
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
