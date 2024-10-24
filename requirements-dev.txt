@@ -59,7 +59,7 @@ pycodestyle==2.12.1
     # via flake8
 pyflakes==3.2.0
     # via flake8
-pywin32==308
+pywin32==308; platform_system == "Windows"
     # via jupyter-core
 pyyaml==6.0.2
     # via
