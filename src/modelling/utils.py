@@ -2,7 +2,9 @@ import os
 import pickle
 from functools import lru_cache
 from loguru import logger
+from prefect import task
 
+@task(name="save-pickle", tags=["fails"], retries=3, retry_delay_seconds=60)
 def pickle_object(obj: object, filename: str, folder_path: str = '../web_service/local_objects') -> None:
     """
     Pickles and saves the given object to a specified folder.
@@ -21,7 +23,8 @@ def pickle_object(obj: object, filename: str, folder_path: str = '../web_service
     except Exception as e:
         logger.error(f"Failed to pickle object: {e}")
 
-@lru_cache
+@task(name="load-preprocessor", tags=["fails"], retries=3, retry_delay_seconds=60)
+#@lru_cache
 def load_preprocessor(filepath: os.PathLike) -> object:
     """
     Loads a pickled preprocessor from the specified file path.
@@ -40,7 +43,8 @@ def load_preprocessor(filepath: os.PathLike) -> object:
         logger.error(f"Failed to load preprocessor: {e}")
         raise
 
-@lru_cache
+@task(name="load-pickle-model", tags=["fails"], retries=3, retry_delay_seconds=60)
+#@lru_cache
 def load_model(filepath: os.PathLike) -> object:
     """
     Loads a pickled model from the specified file path.
