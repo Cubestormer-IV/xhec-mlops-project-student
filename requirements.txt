@@ -372,7 +372,7 @@ pytz==2024.2
     #   dateparser
     #   pandas
     #   prefect
-pywin32==308
+pywin32>=308; sys_platform == 'win32'
     # via
     #   docker
     #   jupyter-core
