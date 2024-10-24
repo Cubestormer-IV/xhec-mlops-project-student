@@ -1,2 +1,36 @@
-# TODO - complete with requirements (pandas, sklearn etc...)
-# Then, execute "pip-compile requirements.in" to generate the file requirements.txt
+# Data processing and scientific computing
+numpy
+pandas
+scipy
+
+# Data visualization
+seaborn
+matplotlib
+
+# Machine learning
+scikit-learn
+
+# MLOps and model tracking
+mlflow
+prefect
+
+# Development tools and formatting
+pre-commit
+black
+black[jupyter]  # For Jupyter notebook support with Black
+flake8
+flake8-docstrings  # For checking docstrings compliance with PEP 257
+pep8-naming  # Ensures PEP 8 compliant variable names
+isort  # Sorts imports in a consistent order
+
+# FastAPI for building APIs
+fastapi
+
+# ASGI server for FastAPI
+uvicorn
+
+# Logging
+loguru
+
+# For running Jupyter notebooks in the environment
+ipykernel

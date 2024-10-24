@@ -1,2 +1,22 @@
-# TODO - complete with dev requirements (black, flake8, ruff, etc...)
-# Then, execute "pip-compile requirements-dev.in" to generate the file requirements-dev.txt
+# Pre-commit hooks tools
+pre-commit
+
+# Code formatting
+black
+
+# Import sorting
+isort
+
+# Linting tool (code quality checks)
+flake8
+
+# YAML and JSON format checkers (for pre-commit hooks)
+pyyaml  # To check YAML files
+jsonschema  # To check JSON files
+
+# Pre-commit hooks for end-of-file fixes, trailing whitespace, and TOML checks
+toml  # For checking TOML files
+
+# Additional dependencies for handling Jupyter notebooks (as specified in pre-commit config)
+nbformat  # Jupyter Notebook formatting
+
