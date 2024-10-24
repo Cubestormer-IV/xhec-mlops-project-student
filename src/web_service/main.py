@@ -1,5 +1,6 @@
 # Code with FastAPI (app = FastAPI(...))
-
+import sys
+sys.path.insert(1, 'C:/Users/USER/Documents/HEC/MLOPS/xhec-mlops-project-student')
 
 from fastapi import FastAPI
 from src.web_service.lib.inference import infer_age
@@ -19,5 +20,5 @@ def home() -> dict:
 def predict(payload: InputSchema) -> dict:
     # TODO: complete and replace the "InsertHereAPydanticClass" with the correct Pydantic classes defined in web_service/lib/models.py
     prediction = infer_age(payload)
-    return {"abalone_age_prediction": y}
+    return prediction
     

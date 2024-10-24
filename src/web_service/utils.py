@@ -3,6 +3,7 @@ import pickle
 from functools import lru_cache
 from loguru import logger
 
+
 @lru_cache
 def load_object(filepath: os.PathLike) -> object:
     """
