@@ -12,6 +12,30 @@ from mlflow import MlflowClient
 
 @flow(name="training-pipeline", retries=3, retry_delay_seconds=5, log_prints=True)
 def main(trainset_path) -> None:
+    
+    """
+    Train a Lasso regression model using the dataset provided at the specified path, log relevant parameters and metrics using MLflow, 
+    and save the trained model and preprocessor as pickle files.
+
+    This function performs the following steps:
+    1. Sets up an MLflow experiment for tracking model training and logging.
+    2. Reads the training dataset from the specified path.
+    3. Preprocesses the data for training.
+    4. Trains a Lasso regression model.
+    5. Logs model parameters, metrics, and the trained model to MLflow.
+    6. Saves the preprocessor and trained model as pickle files for later use.
+
+    Args:
+        trainset_path (str): The path to the training dataset in CSV format.
+
+    Returns:
+        None: The function does not return any value.
+
+    Example usage:
+        python script.py ../data/abalone.csv
+    """
+
+
     # Set the experiment
     mlflow.set_experiment("abalone-model")
 
