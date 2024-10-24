@@ -8,7 +8,7 @@ from prefect import task
 
 @task(name="predict", tags=['fails'], retries=3, retry_delay_seconds=60)
 def predict(pipeline, X_train, X_test, y_train, y_test) -> None:
-    
+
     """
     Uses a trained model pipeline to make predictions on the test dataset.
 
