@@ -12,6 +12,7 @@ scikit-learn
 
 # MLOps and model tracking
 mlflow
+prefect
 
 # Development tools and formatting
 pre-commit
