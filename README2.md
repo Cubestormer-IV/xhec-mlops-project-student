@@ -1,6 +1,6 @@
 <div align="center">
 
-# Abalone Project
+# Abalone MLOps Project
 
 [![Python Version](https://img.shields.io/badge/python-3.10-blue.svg)]()
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -10,8 +10,6 @@
 </div>
 
 ## Context of the project
-
-### Description
 
 **Objective**: predict the age of abalone (Rings + 1.5) from various physical measurements and industrialise the machine learning workflow.
 
