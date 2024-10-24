@@ -28,9 +28,8 @@
 Create and activate the environment:
 ```bash
 conda env create --file environment.yml
-conda activate <envname>
+conda activate abalone
 ```
-TODO - replace envname
 
 **Option 2: Pip and Virtualenv**
 
