@@ -3,7 +3,7 @@ import pickle
 from functools import lru_cache
 from loguru import logger
 
-def pickle_object(obj: object, filename: str, folder_path: str = '../web_service/local_objects') -> None:
+def pickle_object(obj: object, filename: str= 'pipeline', folder_path: str = '../web_service/local_objects') -> None:
     """
     Pickles and saves the given object to a specified folder.
 
