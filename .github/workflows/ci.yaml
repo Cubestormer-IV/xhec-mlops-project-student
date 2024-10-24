@@ -1,0 +1,40 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  CI:
+    name: Launching CI
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10']
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name:
+      # - name: Install pip-tools
+      #   run: |
+      #     pip install pip-tools
+
+      # - name: Pre-commit
+      #   run: |
+      #     pre-commit install
+        
+      # - name: Run pre-commit checks
+      #   run: |
+      #     pre-commit run --all-files
+        
+      # - name: Compile and Install packages from requirements.in
+      #   run: |
+      #     pip-compile requirements.in
+      #     pip install -r requirements.txt
+
+      # - name: Compile and Install packages from requirements-dev.in
+      #   run: |
+      #     pip-compile requirements-dev.in
+      #     pip install -r requirements-dev.txt

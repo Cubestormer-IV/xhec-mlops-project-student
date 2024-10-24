@@ -1,0 +1,30 @@
+name: My Flow
+description: A deployment for the "My Flow" project
+version: 1.0.0
+
+work_pool:
+  name: default-agent-pool
+
+deployments:
+- name: My Flow
+  entrypoint: src/modelling/main.py:main
+  parameters: {}
+  version:
+  tags: []
+  concurrency_limit:
+  description:
+  work_pool:
+    name: '"default-agent-pool"'
+    work_queue_name: default
+    job_variables: {}
+  enforce_parameter_schema: true
+  schedules:
+  - interval: 3600.0
+    anchor_date: '2024-10-24T18:50:31.035510+00:00'
+    timezone: UTC
+    active: true
+    max_active_runs:
+    catchup: false
+  pull:
+  - prefect.deployments.steps.set_working_directory:
+      directory: /Users/elisebarattini/Documents/DSB/08_MLOPS/xhec-mlops-project-student
