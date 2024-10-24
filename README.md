@@ -51,7 +51,7 @@ pip install -r requirements-dev.txt # Install development tools such as flake8, 
 
 
 ## 2. Running the code
-### Running the Prefect Worklow
+### Prefect Worklow
 To start the Prefect server and enable monitoring:
 ```bash
 prefect server start
@@ -79,8 +79,17 @@ prefect deployment run "training-pipeline/My Flow" --param 'data/abalone.csv'
 
 To monitor the Prefect dashboard: http://127.0.0.1:4200
 
+### FastAPI
 
-### Deploying the API
+The Following command runs the FastAPI testing app
+
+```bash
+uvicorn main:app --reload
+```
+
+It should look like [this](response.png).
+
+### Building Docker Image
 
 Build the docker image from the Dockerfile:
 ```bash
@@ -94,14 +103,5 @@ docker run -p 8001:8001 abalone-age-prediction
 
 To get access to the FastAPI dashboard use this url: http://0.0.0.0:8001/docs
 
-### FastAPI Demonstration
-
-The Following command runs the FastAPI testing app
-
-```bash
-uvicorn main:app --reload
-```
-
-Using the localhost url, we can see the following demos
 
 
