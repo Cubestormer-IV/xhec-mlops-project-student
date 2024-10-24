@@ -84,4 +84,15 @@ To monitor the Prefect dashboard: http://127.0.0.1:4200
 
 
 ### Deploying the API
-TODO
+
+Build the docker image from the Dockerfile:
+```bash
+docker build -t abalone-age-prediction -f Dockerfile .
+```
+
+Run the docker container from the created image:
+```bash
+docker run -p 8000:8000 abalone-age-prediction
+```
+
+To get access to the FastAPI dashboard use this url: http://0.0.0.0:8000/docs
